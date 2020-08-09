@@ -9,8 +9,8 @@ const GifGrid = ({categorie}) => {
     
     return ( 
         <Fragment>
-        <h3>{categorie}</h3>
-        {loading&&'Cargando'}
+        <h3 className="card animate__animated animate__fadeIn">{categorie}</h3>
+        {loading&&<p className="card animate__animated animate__flash">loading</p>}
         <div className="card-grid">
                 {
                     images.map(image=>(
