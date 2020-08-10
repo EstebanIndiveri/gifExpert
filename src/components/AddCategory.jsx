@@ -22,6 +22,7 @@ const AddCategory = ({setCategories}) => {
         <Fragment>
         {/* <h1>{inputValue}</h1> */}
         <form onSubmit={handelSubmit}>
+            <p>{inputValue}</p>
             <input
             type="text"
             value={inputValue}
