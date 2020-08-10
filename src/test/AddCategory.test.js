@@ -3,8 +3,14 @@ import { shallow } from 'enzyme';
 import AddCategory from '../components/AddCategory';
 
 describe('pruba en <AddCategody/>', () => {
-    const setCategories=()=>{};
-    const wrapper=shallow(<AddCategory setCategories={setCategories}/>);
+    const setCategories=jest.fn();
+    let wrapper=shallow(<AddCategory setCategories={setCategories}/>);
+    beforeEach(()=>{
+        jest.clearAllMocks();
+    wrapper=shallow(<AddCategory setCategories={setCategories}/>);
+
+    });
+
     test('debe de mostrarse correctamente', () => {
         expect(wrapper).toMatchSnapshot();
 
@@ -17,6 +23,24 @@ describe('pruba en <AddCategody/>', () => {
 
     });
 
-    
+    test('no debe de postear info en el submit', () => {
+        wrapper.find('form').simulate('submit',{preventDefault(){}});
+        expect(setCategories).not.toHaveBeenCalled();
+    });
+    test('debe de llamar el setCategories y limíar caja', () => {
+   
+    //     //1simular inputchange
+    //     //2.simular el sumbit
+    //     //3.setcategories llamado
+    //     //4.input =''
+        const value='hola mundo';
+        wrapper.find('input').simulate('change',{target:{value}});
+
+        wrapper.find('form').simulate('submit',{preventDefault(){}});
+        expect(setCategories).toHaveBeenCalled();
+        expect(setCategories).toHaveBeenCalledWith(expect.any(Function));
+
+        expect(wrapper.find('input').prop('value')).toBe('');
+    });
     
 })
