@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Si funciona <GifGrif/> mostrarse correctamente  1`] = `
+<Fragment>
+  <h3
+    className="card animate__animated animate__fadeIn"
+  >
+    hola
+  </h3>
+  <div
+    className="card-grid"
+  />
+</Fragment>
+`;
+
+exports[`Si funciona <GifGrif/> useFetchGifs regresa items 1`] = `
+<Fragment>
+  <h3
+    className="card animate__animated animate__fadeIn"
+  >
+    hola
+  </h3>
+  <div
+    className="card-grid"
+  >
+    <GrifGridItem
+      id="abc"
+      key="abc"
+      title="titulo"
+      url="https://localhost"
+    />
+  </div>
+</Fragment>
+`;

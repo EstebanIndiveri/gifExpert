@@ -28,17 +28,7 @@ describe('<GifGridItem/>', () => {
     });
     
 
-    // test('debe de llamar el setCategories y limíar caja', () => {
-    //     //1simular inputchange
-    //     //2.simular el sumbit
-    //     //3.setcategories llamado
-    //     //4.input =''
-    //     const value
-    //     test('should ', () => {
-            
-    //     })
-        
-    // })
+
     
     
 })
